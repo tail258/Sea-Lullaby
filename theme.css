@@ -40,6 +40,11 @@ body {
   --sl-shell: #e9edf2; --sl-paper: #ffffff; --sl-surface: #ffffff;
   --sl-ink: #303c49; --sl-muted: #637384; --sl-accent: #52677f;
   --sl-border: #e1e5e9; --sl-rail: #404e5b;
+  /* Warm sand accents; deeper sand for small linked text. */
+  --sl-sand-title: #a17d4b; --sl-sand-heading: #976d38;
+  --sl-sand-link: #ae8b56; --sl-sand-hover: #8b6536;
+  --sl-sand-gradient: linear-gradient(105deg, #80572e 0%, #d5b67f 50%, #a37a40 100%);
+  --sl-sand-gradient-secondary: linear-gradient(105deg, #865e31 0%, #bc975e 55%, #99713f 100%);
   --accent-h: 212; --accent-s: 21%; --accent-l: 40%;
   --color-base-00: #ffffff; --color-base-05: #f7f8fa; --color-base-10: #f0f3f6;
   --color-base-20: #e9edf2; --color-base-25: #e1e5e9; --color-base-30: #d4dbe3;
@@ -52,17 +57,18 @@ body {
   --background-modifier-border-focus: var(--sl-accent);
   --background-modifier-hover: #e0e7ef; --background-modifier-active-hover: #d9e2ed;
   --text-normal: var(--sl-ink); --text-muted: var(--sl-muted); --text-faint: #738294;
-  --text-accent: #52677f; --text-accent-hover: #344b63; --text-on-accent: #ffffff;
+  --text-accent: var(--sl-sand-link); --text-accent-hover: var(--sl-sand-hover); --text-on-accent: #ffffff;
   --text-selection: #d9e2ed; --text-highlight-bg: #ece8df;
   --interactive-normal: #ffffff; --interactive-hover: #e8edf3;
   --interactive-accent: #52677f; --interactive-accent-hover: #40566d;
   --icon-color: #637384; --icon-color-hover: #303c49; --icon-color-active: #40566d;
-  --link-color: #52677f; --link-color-hover: #344b63;
-  --link-external-color: #52677f; --link-external-color-hover: #344b63;
-  --link-unresolved-color: #7c706a;
+  --link-color: var(--sl-sand-link); --link-color-hover: var(--sl-sand-hover);
+  --link-external-color: var(--sl-sand-link); --link-external-color-hover: var(--sl-sand-hover);
+  --link-unresolved-color: var(--sl-sand-link);
+  --link-unresolved-opacity: 1;
   --bold-color: #303c49; --italic-color: #637384;
-  --h1-color: #303e4b; --h2-color: #354554; --h3-color: #404e5b;
-  --h4-color: #404e5b; --h5-color: #404e5b; --h6-color: #637384;
+  --h1-color: var(--sl-sand-title); --h2-color: var(--sl-sand-heading); --h3-color: #8b7354;
+  --h4-color: #766b5d; --h5-color: #6c6964; --h6-color: #797b7c;
   --ribbon-background: #404e5b; --ribbon-background-collapsed: #404e5b;
   --tab-container-background: #f4f6f8; --tab-background-active: #ffffff;
   --tab-text-color: #637384; --tab-text-color-active: #303c49;
@@ -290,4 +296,63 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   body { --anim-duration-fast: 0ms; --anim-duration-moderate: 0ms; --anim-duration-slow: 0ms; }
+}
+
+/* Sand title hierarchy: gradients follow the text width, not the full note. */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .inline-title,
+  .markdown-rendered h1,
+  .markdown-rendered h2 {
+    width: fit-content;
+    max-width: 100%;
+  }
+  .inline-title,
+  .markdown-rendered h1,
+  .markdown-source-view.mod-cm6 .cm-header-1 {
+    background-image: var(--sl-sand-gradient);
+  }
+  .markdown-rendered h2,
+  .markdown-source-view.mod-cm6 .cm-header-2 {
+    background-image: var(--sl-sand-gradient-secondary);
+  }
+  .inline-title,
+  .markdown-rendered :is(h1, h2),
+  .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2) {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    caret-color: #80572e;
+  }
+  .inline-title::selection,
+  .markdown-rendered :is(h1, h2)::selection,
+  .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2)::selection {
+    -webkit-text-fill-color: #303c49;
+    background-color: var(--text-selection);
+  }
+}
+/* Light sand links retain a fine underline for easy identification. */
+.markdown-rendered a:is(.internal-link, .external-link),
+.markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link, .cm-url) {
+  color: var(--sl-sand-link);
+  -webkit-text-fill-color: currentColor;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #ae8b5660;
+  text-underline-offset: .2em;
+}
+.markdown-rendered a:is(.internal-link, .external-link):hover,
+.markdown-source-view.mod-cm6 :is(.cm-hmd-internal-link, .cm-link, .cm-url):hover {
+  color: var(--sl-sand-hover);
+  text-decoration-color: currentColor;
+}
+@media (forced-colors: active) {
+  .inline-title,
+  .markdown-rendered :is(h1, h2),
+  .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2) {
+    background-image: none;
+    -webkit-text-fill-color: CanvasText;
+  }
 }

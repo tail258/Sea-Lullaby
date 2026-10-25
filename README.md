@@ -17,12 +17,19 @@
 
 <p align="center">
   <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a><br>
-  <a href="#design">Design</a> · <a href="#installation">Installation</a> · <a href="#credits--license">Credits &amp; license</a>
+  <a href="#preview">Preview</a> · <a href="#design">Design</a> · <a href="#installation">Installation</a> · <a href="#credits--license">Credits &amp; license</a>
 </p>
 
 ---
 
-**Sea Lullaby · 海之摇篮** is an Obsidian theme for reading and writing at an unhurried pace. A narrow slate ribbon anchors the interface; mist-blue sidebars frame a bright note surface. Muted accents and generous line spacing keep attention on the page.
+**Sea Lullaby · 海之摇篮** is an Obsidian theme for reading and writing at an unhurried pace. A narrow slate ribbon anchors the interface; mist-blue sidebars frame a bright note surface. Warm sand headings, gentle links, and generous line spacing keep attention on the page.
+
+## Preview
+
+<p align="center">
+  <img src="assets/sea-lullaby-preview.png" alt="Sea Lullaby in Obsidian, showing warm sand headings and callouts" width="100%"><br>
+  <sub>Sea Lullaby in Obsidian · Callouts and warm sand accents</sub>
+</p>
 
 ## Design
 
@@ -39,6 +46,7 @@
 | **Mist** | `#8FA0B8` | Gentle highlights |
 | **Stone** | `#948F8C` | Warm counterpoint |
 | **Silver** | `#CCC9C6` | Soft neutral detail |
+| **Sand** | `#AE8B56` | Links and warm heading accents |
 | **Paper** | `#FFFFFF` | Note background |
 
 The theme intentionally keeps the same light reading palette in both Obsidian's light and dark appearance settings. Fonts may vary with what is installed on your system.

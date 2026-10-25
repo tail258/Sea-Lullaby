@@ -17,12 +17,19 @@
 
 <p align="center">
   <a href="README.md">English</a> · <strong>简体中文</strong><br>
-  <a href="#设计">设计</a> · <a href="#安装">安装</a> · <a href="#致谢与许可">致谢与许可</a>
+  <a href="#预览">预览</a> · <a href="#设计">设计</a> · <a href="#安装">安装</a> · <a href="#致谢与许可">致谢与许可</a>
 </p>
 
 ---
 
-**Sea Lullaby · 海之摇篮** 是一款适合安静阅读与书写的 Obsidian 主题。窄深色工具栏稳住界面，浅雾蓝侧栏围绕明亮的笔记页面；克制的强调色与舒展的行距，让注意力回到文字。
+**Sea Lullaby · 海之摇篮** 是一款适合安静阅读与书写的 Obsidian 主题。窄深色工具栏稳住界面，浅雾蓝侧栏围绕明亮的笔记页面；暖沙色标题、柔和的链接与舒展的行距，让注意力回到文字。
+
+## 预览
+
+<p align="center">
+  <img src="assets/sea-lullaby-preview.png" alt="Sea Lullaby 主题在 Obsidian 中显示暖沙色标题和提示块" width="100%"><br>
+  <sub>Sea Lullaby 在 Obsidian 中的提示块与暖沙色细节</sub>
+</p>
 
 ## 设计
 
@@ -39,6 +46,7 @@
 | **Mist · 海雾** | `#8FA0B8` | 柔和高亮 |
 | **Stone · 暖石** | `#948F8C` | 暖色平衡 |
 | **Silver · 银灰** | `#CCC9C6` | 中性色细节 |
+| **Sand · 暖沙** | `#AE8B56` | 链接与标题暖色强调 |
 | **Paper · 纸面** | `#FFFFFF` | 笔记背景 |
 
 主题在 Obsidian 的浅色和深色外观设置下均保持同一套浅色阅读配色。实际字体取决于系统中安装的字体。
