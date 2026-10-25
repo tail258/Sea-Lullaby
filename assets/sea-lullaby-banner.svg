@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Sea Lullaby</title>
+  <desc id="desc">A quiet sea-blue horizon with layered mist and waves.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6f8f9"/>
+      <stop offset="1" stop-color="#e9edf2"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#8fa0b8"/>
+      <stop offset="1" stop-color="#404e5b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="url(#sky)"/>
+  <path d="M0 230 C240 193 339 205 515 227 S872 261 1200 195 L1200 300 L0 300 Z" fill="#ccc9c6" opacity=".52"/>
+  <path d="M0 244 C215 212 340 225 520 248 S867 259 1200 219 L1200 300 L0 300 Z" fill="#8fa0b8" opacity=".64"/>
+  <path d="M0 262 C197 242 381 252 565 267 S942 263 1200 240 L1200 300 L0 300 Z" fill="url(#sea)"/>
+  <circle cx="985" cy="85" r="44" fill="#fdfdfd" opacity=".92"/>
+  <circle cx="985" cy="85" r="59" fill="none" stroke="#ffffff" stroke-width="1" opacity=".55"/>
+  <path d="M797 164 C919 159 1056 159 1156 163" fill="none" stroke="#ffffff" stroke-width="2" opacity=".52"/>
+  <path d="M843 178 C967 175 1054 176 1130 178" fill="none" stroke="#ffffff" stroke-width="1.5" opacity=".4"/>
+  <text x="66" y="72" fill="#677b8f" font-family="Segoe UI, Arial, sans-serif" font-size="13" letter-spacing="5">OBSIDIAN THEME</text>
+  <text x="62" y="149" fill="#303c49" font-family="Georgia, 'Times New Roman', serif" font-size="60" letter-spacing="1">Sea Lullaby</text>
+  <path d="M65 171 H350" stroke="#948f8c" stroke-width="2" opacity=".72"/>
+  <text x="66" y="203" fill="#52677f" font-family="Segoe UI, Arial, sans-serif" font-size="18" letter-spacing="1">A quiet horizon for your words.</text>
+</svg>
