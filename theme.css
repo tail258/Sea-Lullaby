@@ -1,4 +1,4 @@
-/* Sea Lullaby — 海之摇篮, 1.1
+/* Sea Lullaby — 海之摇篮, 1.1.1
    Sea / Harbor / Mist / Stone / Silver: #404E5B #677B8F #8FA0B8 #948F8C #CCC9C6
    Adapted from Ink & Linen and Dust & Vellum (MIT). See LICENSE.
    White reading surface, mist navigation, a narrow slate ribbon. */
@@ -298,38 +298,35 @@ body {
   body { --anim-duration-fast: 0ms; --anim-duration-moderate: 0ms; --anim-duration-slow: 0ms; }
 }
 
-/* Sand title hierarchy: gradients follow the text width, not the full note. */
+/* Editable titles use solid sand ink. Transparent gradient text disappears under
+   Chromium's selection highlight and CodeMirror's separate selection layer. */
+.inline-title,
+.markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2) {
+  -webkit-text-fill-color: currentColor;
+  caret-color: #80572e;
+}
+/* Reading-mode gradients follow the text width, not the full note. */
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
-  .inline-title,
-  .markdown-rendered h1,
-  .markdown-rendered h2 {
+  .markdown-rendered :is(h1, h2) {
     width: fit-content;
     max-width: 100%;
-  }
-  .inline-title,
-  .markdown-rendered h1,
-  .markdown-source-view.mod-cm6 .cm-header-1 {
-    background-image: var(--sl-sand-gradient);
-  }
-  .markdown-rendered h2,
-  .markdown-source-view.mod-cm6 .cm-header-2 {
-    background-image: var(--sl-sand-gradient-secondary);
-  }
-  .inline-title,
-  .markdown-rendered :is(h1, h2),
-  .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2) {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-repeat: no-repeat;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
-    caret-color: #80572e;
   }
-  .inline-title::selection,
+  .markdown-rendered h1 {
+    background-image: var(--sl-sand-gradient);
+  }
+  .markdown-rendered h2 {
+    background-image: var(--sl-sand-gradient-secondary);
+  }
   .markdown-rendered :is(h1, h2)::selection,
-  .markdown-source-view.mod-cm6 :is(.cm-header-1, .cm-header-2)::selection {
-    -webkit-text-fill-color: #303c49;
+  .markdown-rendered :is(h1, h2) *::selection {
+    color: var(--sl-ink);
+    -webkit-text-fill-color: var(--sl-ink);
     background-color: var(--text-selection);
   }
 }
